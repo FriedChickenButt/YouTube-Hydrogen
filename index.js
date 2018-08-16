@@ -76,6 +76,7 @@ ipcMain.on('msDown', function(e){
 	let pos = mainWindow.getPosition();
 	coor_diff[0] = get.x - pos[0];
 	coor_diff[1] = get.y - pos[1];
+	console.log("msDown: x=" + coor_diff[0] + ", y=" + coor_diff[1]);
 	//console.log(mousePos);
 	//console.log(coor_diff[0] + "," + coor_diff[1]);
 	
@@ -87,13 +88,14 @@ ipcMain.on('keydown1', function(e, val){
 	if(val == 20) {
 		toggleDrag += 1;
 		toggleDrag = toggleDrag%2;
+		console.log('keydown1: toggleDrag=' + toggleDrag);
 	}
 });
 
 // catch MsUp
 ipcMain.on('msUp', function(e){
 	isDown = 0;
-	//console.log('456');
+	console.log('msUp: isDown=' + isDown);
 });
 
 ipcMain.on('msMove', function(e){
@@ -102,27 +104,29 @@ ipcMain.on('msMove', function(e){
 		let get = electron.screen.getCursorScreenPoint();
 		newWinPos[0] = get.x - coor_diff[0];
 		newWinPos[1] = get.y - coor_diff[1];
-		//console.log(newWinPos[0] + "," + newWinPos[1]);
 		mainWindow.setPosition(newWinPos[0], newWinPos[1]);
 		if(isSmallOpen == 1) {
 			smallSize = addWindow.getSize();
+			console.log("msMove: x=" + newWinPos[0] + ", y=" + newWinPos[1]);
 			addWindow.setPosition(mainWinPos[0] - smallSize[0],mainWinPos[1]);
 		}
 	}
 });
 
 ipcMain.on('openWindow', function(e, path){
-	//console.log(path.substr(path.length - 14));
 	if(isSmallOpen == 0) {
 		if(path.substr(path.length - 14) == "startPage.html") {
+			console.log("openWindow: startPage.html");
 			createAddWindow("https://youtube.com/");	
 		}
 		else {
+			console.log("openWindow: " + path);
 			createAddWindow(path);
 		}
 		isSmallOpen = 1;
 	}
 	else {
+		console.log("openWindow: close\n");
 		addWindow.close();
 		isSmallOpen = 0;
 	}
@@ -130,26 +134,28 @@ ipcMain.on('openWindow', function(e, path){
 
 ipcMain.on('element-clicked', function(e, path) {
 	mainWindow.webContents.send('element-clicked', path);
-	console.log(path);
+//	console.log("element-clicked:	" + path);
 	if(path.substr(26).length == 11) {
 		path = "https://www.youtube.com/watch?v=" + path.substr(26);
-		console.log(path);
+		console.log("IPC: element-clicked: " + path);
 		downloadPage(path, 0);
 	}
 });
 
 ipcMain.on('chan-clicked', function(e, path) {
+	console.log("chan-clicked: " + path);
 	downloadPage(path, 1);
 });
 
 ipcMain.on('search', function(e, name) {
-	console.log(name);
+	console.log("IPC: search: " + name);
 	downloadPage("https://www.youtube.com/results?search_query="+name, 0);
 });
 
 function createSmallWindow1_html(v_id_str, thumbnail, vlength_str, simpletext_str, chanurl_str, channel_str, viewtext_str, pubtimetext_str, isPlaylist)
 {
 
+	//console.log("create: myfile.html");
 	var data1 = "";
 	data1 += "\n<div class=\"style-scope ytd-compact-autoplay-renderer\"><ytd-compact-video-renderer class=\"style-scope ytd-compact-autoplay-renderer use-ellipsis\">\n\n<div id=\"dismissable\" class=\"style-scope ytd-compact-video-renderer\">\n\n<ytd-thumbnail use-hovered-property=\"\" width=\"126\" class=\"style-scope ytd-compact-video-renderer\">\n\n<!--vid link--><a id=\"thumbnail\" class=\"yt-simple-endpoint inline-block style-scope ytd-thumbnail\" aria-hidden=\"true\" tabindex=\"-1\" rel=\"nofollow\" href=\"https://youtube.com/embed/" + v_id_str + "\" onclick=\"clicklink(this)\">\n";
 	data1 += "\n<yt-img-shadow class=\"style-scope ytd-thumbnail no-transition\" style=\"background-color: transparent;\" loaded=\"\"><img id=\"img\" class=\"style-scope yt-img-shadow\" alt=\"\" width=\"168\" src=\"" + thumbnail + "\"></yt-img-shadow>\n";
@@ -164,21 +170,21 @@ function createSmallWindow1_html(v_id_str, thumbnail, vlength_str, simpletext_st
 
 	var rest = "";
 	//extra = 0;
+	//console.log("FileRead: rest");
 	data1 += fs.readFileSync('rest').toString();
-	//console.log(data2);
 	return data1;
 }
 
 function downloadPage(link, isChannel) {
 	download(mainWindow, link, {directory: __dirname, filename: "download.html"})
-		.then(dl => { console.log(dl.getSavePath()); initAddWindow(isChannel);})
+		.then(dl => { console.log("Download: " + dl.getSavePath()); initAddWindow(isChannel);})
 		.catch(console.error);
 }
 
 function createAddWindow(path) {
 	var pathnew = "";
 		pathnew = "https://youtube.com/watch?v=" + path.substr(path.lastIndexOf("/") + 1);
-	console.log(pathnew);
+	console.log("createAddWindow: " + pathnew);
 	downloadPage(pathnew, 0);
 	addWindow = new BrowserWindow({
 		width: 538,
@@ -200,11 +206,13 @@ function initAddWindow(isChannel){
 	var vidcon = "";
 	var suc = "";
 
+	console.log("FileRead: predecessor");
 	var pre = fs.readFileSync('predecessor').toString();
 	
 	extra = 0;
 	var fileRead = function(){
 		var data = "";
+		console.log("FileRead: download.html");
 		data += fs.readFileSync('download.html').toString();
 		if(data == "") {
 			setTimeout(fileRead,500);
@@ -344,15 +352,19 @@ function initAddWindow(isChannel){
 	fileRead();
 	/*************************************************** */
 	
+	console.log("FileRead: successor");
 	suc = fs.readFileSync('successor').toString();
 
 	data2 = pre + vidcon + suc;
+	
+	console.log("FileWrite: myfile.html");
 	try { fs.writeFileSync('myfile.html', data2, 'utf-8'); }
 	catch(e) { alert('Failed to save the file !'); }
 
 	//console.log(vidcon);
 
 
+	console.log("LoadURL: myfile.html");
 	addWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'myfile.html'),
 		protocol: 'file:',
@@ -362,7 +374,8 @@ function initAddWindow(isChannel){
 
 
 	 // Handle garbage collection
-  addWindow.on('close', function(){
-    addWindow = null;
-  });
+  	addWindow.on('close', function(){
+	  	console.log("close: addWindow");
+    	addWindow = null;
+  	});
 }
