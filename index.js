@@ -4,11 +4,13 @@ const path = require('path');
 const pwd = require('path');
 const fs = require('fs');
 const {ipcRenderer} = electron;
+const rimraf = require('rimraf');
 
 
 
 const {app, BrowserWindow, Menu, ipcMain} = electron;
 const {download} = require('electron-dl');
+const appName = app.getName();
 
 let mainWindow;
 let addWindow;
@@ -55,6 +57,10 @@ app.on('ready', function(){
 	
 
 	mainWindow.on('closed', function(){
+		const getAppPath = path.join(app.getPath('appData'), appName);
+		//console.log(getAppPath);
+		rimraf.sync(getAppPath);
+		console.log("Cleared app Data");
 		app.quit();
 	});
 
@@ -133,8 +139,8 @@ ipcMain.on('openWindow', function(e, path){
 });
 
 ipcMain.on('element-clicked', function(e, path) {
-	mainWindow.webContents.send('element-clicked', path);
-//	console.log("element-clicked:	" + path);
+	mainWindow.webContents.send('element-clicked', path + "?autoplay=1");
+	console.log("element-clicked: " + path);
 	if(path.substr(26).length == 11) {
 		path = "https://www.youtube.com/watch?v=" + path.substr(26);
 		console.log("IPC: element-clicked: " + path);
@@ -374,8 +380,9 @@ function initAddWindow(isChannel){
 
 
 	 // Handle garbage collection
-  	addWindow.on('close', function(){
-	  	console.log("close: addWindow");
-    	addWindow = null;
+  	addWindow.on('close', function() {
+		console.log("close: addWindow");
+		isSmallOpen = 0;  
+		addWindow = null;
   	});
 }

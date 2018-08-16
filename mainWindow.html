@@ -2,29 +2,22 @@
 <html lang="en" style = "width: 100%; height: 100%; margin: 0; padding: 0;">
 <head>
     
-    <title>Shopping list</title>
+    <title>YouTube-Hydrogen Player</title>
 </head>
-<body onkeydown="keydown1(event,this)" onmouseover="msOver()" onmouseout="msOut()" style = "width: 100%; height: 100%; margin: 0; padding: 0;"><!-- -webkit-app-region: drag;"> -->
+<body onkeydown="keydown1(event,this)" onmousemove="msMove()" onmouseover="msOver()" onmouseout="msOut()" style = "width: 100%; height: 100%; margin: 0; padding: 0;"><!-- -webkit-app-region: drag;"> -->
     <div style="width: 100%; overflow: hidden;">
-        <div style="width: 600px; float: left; position: relative;"> 
-            
+        <div style="width: 600px; float: left; position: relative;">     
             <webview id = "yt-player" src = "startPage.html" style = "width: 100vw; height: 100vh; position: relative; z-index: 4000"></webview>
         </div>
-        <!-- <div style="width: 600px; float: left; position: relative;"> 
-            <iframe id="iframe" src="https://www.youtube.com/embed/F1geJWP4Yvs" style = "width: 100vw; height: 99vh; position: relative; z-index: 4000" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div> -->
-        <!--<div style="float: bottom; position: absolute; z-index: 999999;"> 
-                
-        </div>-->
         <div style="float: top-left; position: absolute; z-index: 9999999;"> 
             <div>
-                <button type="button" id = "drag" tabindex="-1" style="position: absolute; top: 10vh; width: 10vw; height: 10vh; background-color: #ff0000; border: none; opacity: 0.5; background:rgba(255,0,0,1); color: white;   -webkit-app-region: drag;"><span>...</span></button>    <!--onmousemove="msMove(event) onmouseover="msOverDrag(event)" onmousedown="msDown(event)" onmouseup="msUp(event)" onclick="drag()""-->
+                <button type="button" id = "drag" tabindex="-1" style="position: absolute; top: 0; width: 20; height: 20; background-color: #ff0000; border: none; opacity: 0.3; background:rgba(255,0,0,1); color: white;   -webkit-app-region: drag;"><span>...</span></button>    <!--onmousemove="msMove(event) onmouseover="msOverDrag(event)" onmousedown="msDown(event)" onmouseup="msUp(event)" onclick="drag()""-->
+                <!--<img src="move_icon2.png" id = "drag" tabindex="-1" style="position: absolute; top: 0; width: 20px; height: 20px; -webkit-app-region: drag;">-->
             </div>
             <div>
                 <button type="button" id = "btn" tabindex="-1" style="position: absolute; top: 40vh; width: 5vw; height: 20vh; background-color: #ff0000; border: none; opacity: 0; background: linear-gradient(to left, rgba(255,0,0,0),rgba(255,0,0,1)); color: white" onclick="openWindow()"><span><</span></button>    
             </div>
-        </div>            
-        
+        </div>        
     </div>
     
     
@@ -33,6 +26,8 @@
         const {ipcRenderer} = electron;
         
         var dragMove = 0;
+        var count = 0;
+        var isMouseOut = 1;
 
         // ipcRenderer.on('openVideo', function(e, path) {
         //     const webview = document.getElementById('yt-player');
@@ -71,21 +66,37 @@
             // dragMove = 1;
             // ipcRenderer.send('msMove');
             //console.log(x + "," + y);
+            count = 0;
         }
 
         function msOver(e) {
             var btn = document.getElementById("btn");
             //var drag = document.getElementById("drag");
-            btn.style.opacity = 1;
             // if(drag.style.opacity < 0.5) {
             //     drag.style.opacity = 0.5;
             // }
+            isMouseOut = 0;
+            var x = setInterval(function(){
+                if(isMouseOut == 1) {
+                    isMouseOut = 0;
+                    clearInterval(x);
+                }
+                if(count >= 4) {
+                    btn.style.opacity = 0;
+                }
+                else {
+                    btn.style.opacity = 1;
+                    count++;
+                }
+            }, 1000);
         }
 
         function msOut(e) {
             var btn = document.getElementById("btn");
             //var drag = document.getElementById("drag");
             btn.style.opacity = 0;
+            count = 4;
+            isMouseOut = 1;
             //drag.style.opacity = 0;
         }
 
@@ -107,7 +118,7 @@
             //console.log(path);
             var iframe = document.getElementById("yt-player");
             //mainWindow.webContents.send('openVideo', path);
-            //console.log(iframe.src);
+            console.log(path);
             // alert(iframe);
             iframe.src = path;
         });

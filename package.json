@@ -1,8 +1,8 @@
 {
-  "name": "youtubeontop",
-  "productName": "YouTube on top",
+  "name": "YouTube-Hydrogen",
+  "productName": "YouTube-Hydrogen",
   "version": "1.0.0",
-  "description": "Youtube Window Desktop App",
+  "description": "YouTube-Hydrogen Desktop App",
   "main": "index.js",
   "scripts": {
     "start": "electron ."
