@@ -112,8 +112,14 @@ ipcMain.on('msMove', function(e){
 });
 
 ipcMain.on('openWindow', function(e, path){
+	//console.log(path.substr(path.length - 14));
 	if(isSmallOpen == 0) {
-		createAddWindow(path);
+		if(path.substr(path.length - 14) == "startPage.html") {
+			createAddWindow("https://youtube.com/");	
+		}
+		else {
+			createAddWindow(path);
+		}
 		isSmallOpen = 1;
 	}
 	else {
