@@ -1,0 +1,21 @@
+{
+  "name": "youtubeontop",
+  "productName": "YouTube on top",
+  "version": "1.0.0",
+  "description": "Youtube Window Desktop App",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Swao",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-dl": "^1.12.0",
+    "google-auth-library": "^1.6.1",
+    "googleapis": "^32.0.0"
+  },
+  "dependencies": {
+    "google-auth-library": "^0.12.0",
+    "googleapis": "^32.0.0"
+  }
+}

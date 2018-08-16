@@ -1,0 +1,23 @@
+</div>
+  <div id="additional-metadata-line" class="style-scope ytd-video-meta-block">
+      <template is="dom-repeat" class="style-scope ytd-video-meta-block"></template>
+  </div>
+  
+  </ytd-video-meta-block>
+      <ytd-badge-supported-renderer class="style-scope ytd-compact-video-renderer">
+  
+  
+      <div class="badge badge-style-type-simple style-scope ytd-badge-supported-renderer">
+      <yt-icon class="style-scope ytd-badge-supported-renderer" disable-upgrade="" hidden="">
+      </yt-icon>
+  <!--New->     <span class="style-scope ytd-badge-supported-renderer">New</span>-->
+      </div>
+  <template is="dom-repeat" id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer"></template>
+  </ytd-badge-supported-renderer>
+      </a>
+      
+      <div id="queue-button" class="style-scope ytd-compact-video-renderer"></div>
+  </div>
+  
+  <div id="dismissed" tabindex="0" class="style-scope ytd-compact-video-renderer"></div>
+  </ytd-compact-video-renderer></div>

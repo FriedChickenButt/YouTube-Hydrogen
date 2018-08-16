@@ -1,0 +1,350 @@
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="related-skeleton" class="watch-skeleton style-scope ytd-watch"><div id="related">
+<div class="autoplay skeleton-light-border-bottom hidden">
+<div id="upnext" class="skeleton-bg-color"></div>
+<div class="video-skeleton">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+<div class="video-skeleton hidden">
+<div class="video-details">
+<div class="thumbnail skeleton-bg-color"></div>
+<div class="details flex-1">
+<div class="video-title text-shell skeleton-bg-color"></div>
+<div class="video-meta text-shell skeleton-bg-color"></div>
+</div>
+</div>
+</div>
+
+</div></div>
+</div>
+<div id="content-separator" tabindex="0" class="style-scope ytd-watch">
+
+</div>
+<div id="alerts" class="style-scope ytd-watch"></div>
+<div id="messages" class="style-scope ytd-watch"></div>
+<div id="clarify-box" class="style-scope ytd-watch"></div>
+
+<div id="pla-shelf" class="style-scope ytd-watch">
+<ytd-pla-shelf-renderer class="style-scope ytd-watch">
+
+<template is="dom-if" class="style-scope ytd-pla-shelf-renderer"></template>
+</ytd-pla-shelf-renderer>
+</div>
+<div id="report" class="style-scope ytd-watch">
+<ytd-report-form-loader id="report-form" defer-on-watch="" class="style-scope ytd-watch" disable-upgrade="">
+</ytd-report-form-loader>
+</div>
+<!-- <div id="meta" class="style-scope ytd-watch">
+<div id="meta-skeleton" class="watch-skeleton style-scope ytd-watch"><div id="secondary-info" class="skeleton-light-border-bottom">
+<div id="top-row">
+<div id="video-owner" class="flex-1">
+  <div id="channel-icon" class="skeleton-bg-color"></div>
+  <div id="upload-info" class="flex-1">
+    <div id="owner-name" class="text-shell skeleton-bg-color">
+    </div>
+    <div id="published-date" class="text-shell skeleton-bg-color">
+    </div>
+  </div>
+</div>
+</div>
+</div></div>
+<div id="limited-state" class="style-scope ytd-watch"></div>
+<div id="meta-contents" class="style-scope ytd-watch"><ytd-video-secondary-info-renderer class="style-scope ytd-watch"><div id="container" class="style-scope ytd-video-secondary-info-renderer"><div id="list-container" class="style-scope ytd-video-secondary-info-renderer"><ytd-horizontal-card-list-renderer id="inline-recs-list-renderer" initial-count="8" class="style-scope ytd-video-secondary-info-renderer" at-start="" at-end="" empty="">
+
+<div id="header-container" class="style-scope ytd-horizontal-card-list-renderer">
+<h2 id="header" class="style-scope ytd-horizontal-card-list-renderer"></h2>
+<div id="sort-filter" class="style-scope ytd-horizontal-card-list-renderer"></div>
+<div id="header-button" class="style-scope ytd-horizontal-card-list-renderer"></div>
+</div>
+<div id="left-arrow-container" class="center-aligned style-scope ytd-horizontal-card-list-renderer" hidden="">
+<div id="left-arrow" class="arrow center-aligned style-scope ytd-horizontal-card-list-renderer">
+<yt-icon icon="yt-icons:chevron_left" class="style-scope ytd-horizontal-card-list-renderer"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g mirror-in-rtl="" class="style-scope yt-icon">
+<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" class="style-scope yt-icon"></path>
+</g></svg>
+
+
+</yt-icon>
+</div>
+<div id="left-arrow-button" class="style-scope ytd-horizontal-card-list-renderer"></div>
+</div>
+<div id="scroll-container" class="style-scope ytd-horizontal-card-list-renderer">
+<div id="items" class="style-scope ytd-horizontal-card-list-renderer"></div>
+</div>
+<div id="right-arrow-container" class="center-aligned style-scope ytd-horizontal-card-list-renderer" hidden="">
+<div id="right-arrow" class="arrow center-aligned style-scope ytd-horizontal-card-list-renderer">
+<yt-icon icon="yt-icons:chevron_right" class="style-scope ytd-horizontal-card-list-renderer"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g mirror-in-rtl="" class="style-scope yt-icon">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" class="style-scope yt-icon"></path>
+</g></svg>
+
+
+</yt-icon>
+</div>
+<div id="right-arrow-button" class="style-scope ytd-horizontal-card-list-renderer"></div>
+</div>
+</ytd-horizontal-card-list-renderer></div><div id="top-row" class="style-scope ytd-video-secondary-info-renderer"><ytd-video-owner-renderer class="style-scope ytd-video-secondary-info-renderer"><a class="yt-simple-endpoint style-scope ytd-video-owner-renderer" aria-label="PewDiePie" href="/user/PewDiePie"><yt-img-shadow id="avatar" width="48" class="style-scope ytd-video-owner-renderer no-transition" style="background-color: transparent;" loaded=""><img id="img" class="style-scope yt-img-shadow" alt="" width="48" src="https://yt3.ggpht.com/a-/ACSszfEGbyCokB_jO8kx2uokxt4vrFfjgK-YN8mGdA=s88-mo-c-c0xffffffff-rj-k-no"></yt-img-shadow></a><div id="upload-info" class="style-scope ytd-video-owner-renderer"><div id="owner-container" class="style-scope ytd-video-owner-renderer"><yt-formatted-string id="owner-name" class="style-scope ytd-video-owner-renderer"><a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw">PewDiePie</a></yt-formatted-string><ytd-badge-supported-renderer class="style-scope ytd-video-owner-renderer">
+
+
+<div class="badge badge-style-type-verified style-scope ytd-badge-supported-renderer">
+<yt-icon class="style-scope ytd-badge-supported-renderer"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope yt-icon">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2z M9.92,17.93l-4.95-4.95l2.05-2.05l2.9,2.9l7.35-7.35l2.05,2.05L9.92,17.93z" class="style-scope yt-icon"></path>
+</g></svg>
+
+
+</yt-icon>
+<span class="style-scope ytd-badge-supported-renderer"></span>
+<paper-tooltip role="tooltip" tabindex="-1" class="style-scope ytd-badge-supported-renderer">
+
+
+<div id="tooltip" class="hidden style-scope paper-tooltip">
+Verified
+</div>
+</paper-tooltip></div>
+<template is="dom-repeat" id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer"></template>
+</ytd-badge-supported-renderer></div><span class="date style-scope ytd-video-secondary-info-renderer" slot="date">Published on Jul 12, 2018</span></div><div id="sponsor-button" class="style-scope ytd-video-owner-renderer"></div></ytd-video-owner-renderer></div><ytd-expander class="description style-scope ytd-video-secondary-info-renderer" collapsed-height="60" collapsed="" style="--ytd-expander-collapsed-height:60px;">
+
+<div id="content" class="style-scope ytd-expander">
+
+<yt-formatted-string id="description" class="content style-scope ytd-video-secondary-info-renderer" slot="content" split-lines="">YouTube news investment is giving pew news 25 million dollars. Thank you YouTube, very cool
+SUBMIT MEMES: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Fwww.reddit.com%2Fr%2FPewdiepieSubmissions%2F">https://www.reddit.com/r/PewdiepieSub...</a>
+CHECK OUT: 
+
+Check out A$$: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Fstore.steampowered.com%2Fapp%2F703840%2FAnimal_Super_Squad%2F">http://store.steampowered.com/app/703...</a>
+(A game I helped make):
+MERCH: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Frepresent.com%2Fpewdiepie3">https://represent.com/pewdiepie3</a>
+TSUKI: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Ftsuki-co-uk.myshopify.com">https://tsuki-co-uk.myshopify.com</a>
+
+:::::::My Setup:::::::: 
+Chair:: ONLY 399 !
+USA &amp; Asia: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Fusa.clutchchairz.com%2Fproduct%2Fpewdiepie-edition-throttle-series%2F">https://usa.clutchchairz.com/product/...</a>
+Europe: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Feurope.clutchchairz.com%2Fen%2Fproduct%2Fthrottle-series-pewdiepie-edition%2F">https://europe.clutchchairz.com/en/pr...</a>
+Canada: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=https%3A%2F%2Fcanada.clutchchairz.com%2Fproduct%2Fthrottle-series-pewdiepie-edition%2F">https://canada.clutchchairz.com/produ...</a>
+Elgato green screen: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Fe.lga.to%2FPewDiePie">http://e.lga.to/PewDiePie</a> <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/results?search_query=%23ad">#ad</a>
+
+(Amazon affiliate links)
+Headphones::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Frzr.to%2Fedgar">http://rzr.to/edgar</a>
+
+Camera::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2FaJFGa">http://amzn.to/2FaJFGa</a>
+
+Microphone:::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2F8gUKa">http://amzn.to/2F8gUKa</a>
+
+Display::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2H2PhyM">http://amzn.to/2H2PhyM</a>
+
+Light::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2CWDLTa">http://amzn.to/2CWDLTa</a>
+
+Keyboard::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2FaJNWa">http://amzn.to/2FaJNWa</a>
+
+Mouse::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2oOqJlG">http://amzn.to/2oOqJlG</a>
+
+Mousepad::
+<a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/redirect?v=E9XVVW7G_Fg&amp;event=video_description&amp;redir_token=X-Oho9TAWFjQWhSlsXAMcZW6CzJ8MTUzMTU2Njc5N0AxNTMxNDgwMzk3&amp;q=http%3A%2F%2Famzn.to%2F2oH0tu7">http://amzn.to/2oH0tu7</a>
+
+__
+
+
+Outro:
+Animation: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="https://www.youtube.com/user/jae55555">https://www.youtube.com/user/jae55555</a>
+Song: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="https://www.youtube.com/channel/UC3e8EMTOn4g6ZSKggHTnNng">https://www.youtube.com/channel/UC3e8...</a></yt-formatted-string>
+</div>
+<ytd-metadata-row-container-renderer class="sticky style-scope ytd-video-secondary-info-renderer" slot="sticky">
+
+<div id="always-shown" class="style-scope ytd-metadata-row-container-renderer"></div>
+<div id="collapsible" class="style-scope ytd-metadata-row-container-renderer" hidden=""></div>
+</ytd-metadata-row-container-renderer>
+<paper-button id="less" aria-expanded="true" noink="" class="style-scope ytd-expander" role="button" tabindex="0" animated="" aria-disabled="false" elevation="0" hidden="">
+<yt-formatted-string class="less-button style-scope ytd-video-secondary-info-renderer" slot="less-button" role="button">Show less</yt-formatted-string>
+</paper-button>
+<paper-button id="more" aria-expanded="false" noink="" class="style-scope ytd-expander" role="button" tabindex="0" animated="" aria-disabled="false" elevation="0">
+<yt-formatted-string class="more-button style-scope ytd-video-secondary-info-renderer" slot="more-button" role="button">Show more</yt-formatted-string>
+</paper-button>
+</ytd-expander></div></ytd-video-secondary-info-renderer></div>
+<div id="offer-module" class="style-scope ytd-watch"></div>
+</div> -->
+<div id="ticket-shelf" class="style-scope ytd-watch"></div>
+<div id="merch-shelf" class="style-scope ytd-watch"></div>
+<div id="donation-shelf" class="style-scope ytd-watch"></div>
+
+
+
+</div>
+</div>
+</div>
+</div></ytd-page-manager>
+</div>
+
+<script src="https://s.ytimg.com/yts/jsbin/spf-vflhSOzLf/spf.js" type="text/javascript" name="spf/spf" class="js-httpssytimgcomytsjsbinspfvflhSOzLfspfjs"></script>  
+
+<script src="https://s.ytimg.com/yts/jsbin/network-vflNZTggj/network.js" type="text/javascript" name="network/network" class="js-httpssytimgcomytsjsbinnetworkvflNZTggjnetworkjs"></script>  
+
+<script src="https://s.ytimg.com/yts/jsbin/web-animations-next-lite.min-vflqEtsI7/web-animations-next-lite.min.js" type="text/javascript" name="web-animations-next-lite.min/web-animations-next-lite.min" class="js-httpssytimgcomytsjsbinwebanimationsnextliteminvflqEtsI7webanimationsnextliteminjs"></script>
+
+<link rel="import" href="https://s.ytimg.com/yts/htmlbin/desktop_polymer_sel_auto_svg_watch-vfltNyaQt.html" name="desktop_polymer_sel_auto_svg_watch">        
+
+<script src="https://s.ytimg.com/yts/jsbin/desktop_polymer-vfltHC_MT/desktop_polymer.js" type="text/javascript" name="desktop_polymer/desktop_polymer" class="js-httpssytimgcomytsjsbindesktop_polymervfltHC_MTdesktop_polymerjs"></script>     
+
+<iframe class="gstl_50 sbdd_c" style="display: none; top: 56px; left: 0px; height: 0px;"></iframe><div class="gstl_50 sbdd_a" style="display: none; min-width: 206px; top: 56px; position: fixed; left: 214px;"><div class="fl"></div><div><div class="sbdd_b"></div><div></div></div></div>
+
+
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+<script src="scripts/jquery.min.js"></script>    
+<script src="scripts/vendor.js"></script>    
+
+<script>if (window.module) module = window.module;</script>
+
+<script>
+  const electron = require('electron');
+  const {ipcRenderer} = electron;
+        
+//   document.addEventListener('DOMContentLoaded', function () {
+//   document.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     setTimeout(function () {
+//       var path = e.target.href;
+//       ipcRenderer.send('element-clicked', path);
+//     }, 100);
+//     return false;
+//   }, true);
+// });
+//function getLink(obj) {
+//  ipcRenderer.sendToHost('element-clicked', obj.getAttribute("href"));
+        //return false;
+//    }
+//
+
+function clicklink(e) {
+  //console.log(e.getAttribute("href"));
+  ipcRenderer.send('element-clicked', e.getAttribute("href"));
+  e.preventDefault();
+  return false;
+}
+
+function clickchan(e, link) {
+  //console.log(link);
+  ipcRenderer.send('chan-clicked', link);
+  e.preventDefault();
+}
+
+function searchResults() {
+  var form = document.forms[0];
+  var name = form.elements["search_query"].value;
+  ipcRenderer.send('search', name);
+}
+</script>
+
+</body>
+
+</html>
