@@ -9643,8 +9643,8 @@
       </div>
 
       <div id="container" class="style-scope ytd-masthead">
-        <ytd-searchbox id="search" class="style-scope" role="search" mode="legacy-centered">
-          <form id="search-form" onsubmit=searchResults() class="style-scope ytd-searchbox">
+        <ytd-searchbox id="search" class="style-scope" mode="legacy-centered">
+          <form id="search-form" onsubmit="return searchResults();" class="style-scope ytd-searchbox">
             <div id="container" class="style-scope ytd-searchbox">
               <div id="search-input" class="ytd-searchbox-spt" slot="search-input">
                 <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" autofocus="" name="search_query" tabindex="0" type="text" spellcheck="false" placeholder="Search" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="list" dir="ltr" class="ytd-searchbox" style="outline: none;">

@@ -338,10 +338,12 @@ function clickchan(e, link) {
   e.preventDefault();
 }
 
-function searchResults() {
+function searchResults(e) {
   var form = document.forms[0];
   var name = form.elements["search_query"].value;
+  console.log("search: " + name);
   ipcRenderer.send('search', name);
+  return false;
 }
 </script>
 

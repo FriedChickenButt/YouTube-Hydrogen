@@ -15,7 +15,7 @@
                 <!--<img src="move_icon2.png" id = "drag" tabindex="-1" style="position: absolute; top: 0; width: 20px; height: 20px; -webkit-app-region: drag;">-->
             </div>
             <div>
-                <button type="button" id = "btn" tabindex="-1" style="position: absolute; top: 40vh; width: 5vw; height: 20vh; background-color: #ff0000; border: none; opacity: 0; background: linear-gradient(to left, rgba(255,0,0,0),rgba(255,0,0,1)); color: white" onclick="openWindow()"><span><</span></button>    
+                <button type="button" id = "btn" tabindex="-1" style="position: absolute; top: 40vh; width: 20px; height: 20vh; background-color: #ff0000; border: none; opacity: 0; background: linear-gradient(to left, rgba(255,0,0,0),rgba(255,0,0,1)); color: white" onclick="openWindow()"><span><</span></button>    
             </div>
         </div>        
     </div>
@@ -37,6 +37,20 @@
         //     };
         //     webview.addEventListener('dom-ready', loadPage);
         // });
+
+        // Hides 'btn' after 5 seconds
+        var x = setInterval(function(){
+                    //console.log(count);
+                    if(count >= 30) {
+                        btn.style.opacity = 0;
+                    }
+                    else {
+                        btn.style.opacity = 1;
+                        count++;
+                    }
+                }, 100);
+
+
         function keydown1(evt,t) {
             ipcRenderer.send('keydown1', evt.keyCode);
         }
@@ -75,28 +89,13 @@
             // if(drag.style.opacity < 0.5) {
             //     drag.style.opacity = 0.5;
             // }
-            isMouseOut = 0;
-            var x = setInterval(function(){
-                if(isMouseOut == 1) {
-                    isMouseOut = 0;
-                    clearInterval(x);
-                }
-                if(count >= 4) {
-                    btn.style.opacity = 0;
-                }
-                else {
-                    btn.style.opacity = 1;
-                    count++;
-                }
-            }, 1000);
         }
 
         function msOut(e) {
             var btn = document.getElementById("btn");
             //var drag = document.getElementById("drag");
             btn.style.opacity = 0;
-            count = 4;
-            isMouseOut = 1;
+            count = 30;
             //drag.style.opacity = 0;
         }
 

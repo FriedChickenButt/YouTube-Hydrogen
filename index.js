@@ -139,12 +139,15 @@ ipcMain.on('openWindow', function(e, path){
 });
 
 ipcMain.on('element-clicked', function(e, path) {
-	mainWindow.webContents.send('element-clicked', path + "?autoplay=1");
 	console.log("element-clicked: " + path);
 	if(path.substr(26).length == 11) {
+		mainWindow.webContents.send('element-clicked', path + "?autoplay=1");
 		path = "https://www.youtube.com/watch?v=" + path.substr(26);
 		console.log("IPC: element-clicked: " + path);
 		downloadPage(path, 0);
+	}
+	else {
+		mainWindow.webContents.send('element-clicked', path);
 	}
 });
 
@@ -163,12 +166,12 @@ function createSmallWindow1_html(v_id_str, thumbnail, vlength_str, simpletext_st
 
 	//console.log("create: myfile.html");
 	var data1 = "";
-	data1 += "\n<div class=\"style-scope ytd-compact-autoplay-renderer\"><ytd-compact-video-renderer class=\"style-scope ytd-compact-autoplay-renderer use-ellipsis\">\n\n<div id=\"dismissable\" class=\"style-scope ytd-compact-video-renderer\">\n\n<ytd-thumbnail use-hovered-property=\"\" width=\"126\" class=\"style-scope ytd-compact-video-renderer\">\n\n<!--vid link--><a id=\"thumbnail\" class=\"yt-simple-endpoint inline-block style-scope ytd-thumbnail\" aria-hidden=\"true\" tabindex=\"-1\" rel=\"nofollow\" href=\"https://youtube.com/embed/" + v_id_str + "\" onclick=\"clicklink(this)\">\n";
+	data1 += "\n<div class=\"style-scope ytd-compact-autoplay-renderer\"><ytd-compact-video-renderer class=\"style-scope ytd-compact-autoplay-renderer use-ellipsis\">\n\n<div id=\"dismissable\" class=\"style-scope ytd-compact-video-renderer\">\n\n<ytd-thumbnail use-hovered-property=\"\" width=\"126\" class=\"style-scope ytd-compact-video-renderer\">\n\n<!--vid link--><a id=\"thumbnail\" class=\"yt-simple-endpoint inline-block style-scope ytd-thumbnail\" aria-hidden=\"true\" tabindex=\"-1\" rel=\"nofollow\" href=\"https://youtube.com/embed/" + v_id_str + "\" onclick=\"return clicklink(this)\">\n";
 	data1 += "\n<yt-img-shadow class=\"style-scope ytd-thumbnail no-transition\" style=\"background-color: transparent;\" loaded=\"\"><img id=\"img\" class=\"style-scope yt-img-shadow\" alt=\"\" width=\"168\" src=\"" + thumbnail + "\"></yt-img-shadow>\n";
 	//if(isPlaylist == 0) {
 		data1 += "\n<div id=\"overlays\" class=\"style-scope ytd-thumbnail\"><ytd-thumbnail-overlay-time-status-renderer class=\"style-scope ytd-thumbnail\" overlay-style=\"DEFAULT\"><span class=\"style-scope ytd-thumbnail-overlay-time-status-renderer\">\n<!--length-->" + vlength_str + "\n</span></ytd-thumbnail-overlay-time-status-renderer></div>\n<div id=\"mouseover-overlay\" class=\"style-scope ytd-thumbnail\"></div>\n<div id=\"hover-overlays\" class=\"style-scope ytd-thumbnail\"></div>\n</a>\n</ytd-thumbnail>";
 	//}
-	data1 += "\n<a class=\"yt-simple-endpoint style-scope ytd-compact-video-renderer\" rel=\"nofollow\">\n<h3 class=\"style-scope ytd-compact-video-renderer\">\n<ytd-badge-supported-renderer class=\"style-scope ytd-compact-video-renderer\" disable-upgrade=\"\" hidden=\"\">\n</ytd-badge-supported-renderer>\n<span id=\"video-title\" class=\"style-scope ytd-compact-video-renderer\" href=\"https://youtube.com/embed/" + v_id_str + "\" onclick=\"clicklink(this)\">\n" + simpletext_str +"\n</span>\n</h3>\n<ytd-video-meta-block class=\"compact style-scope ytd-compact-video-renderer\" no-endpoints=\"\">";
+	data1 += "\n<a class=\"yt-simple-endpoint style-scope ytd-compact-video-renderer\" rel=\"nofollow\">\n<h3 class=\"style-scope ytd-compact-video-renderer\">\n<ytd-badge-supported-renderer class=\"style-scope ytd-compact-video-renderer\" disable-upgrade=\"\" hidden=\"\">\n</ytd-badge-supported-renderer>\n<span id=\"video-title\" class=\"style-scope ytd-compact-video-renderer\" href=\"https://youtube.com/embed/" + v_id_str + "\" onclick=\"return clicklink(this)\">\n" + simpletext_str +"\n</span>\n</h3>\n<ytd-video-meta-block class=\"compact style-scope ytd-compact-video-renderer\" no-endpoints=\"\">";
 	data1 += "\n<div id=\"metadata\" class=\"style-scope ytd-video-meta-block\">\n<div id=\"byline-container\" class=\"style-scope ytd-video-meta-block\" onclick=\"clickchan(event, \'https://youtube.com/" + chanurl_str + "/videos\')\">\n<div id=\"byline-inner-container\" class=\"style-scope ytd-video-meta-block\" style=\"cursor: pointer;\">\n";
 	data1 += "\n<yt-formatted-string id=\"byline\" ellipsis-truncate=\"\" class=\"style-scope ytd-video-meta-block\">" + channel_str + "</yt-formatted-string>\n";
 	data1 += "\n</div>\n<div id=\"separator\" class=\"style-scope ytd-video-meta-block\">•</div>\n</div>\n<div id=\"metadata-line\" class=\"style-scope ytd-video-meta-block\">\n<span class=\"style-scope ytd-video-meta-block\">" + viewtext_str + "</span> <template is=\"dom-repeat\" strip-whitespace=\"\" class=\"style-scope ytd-video-meta-block\"></template>\n\n</div>\n";
