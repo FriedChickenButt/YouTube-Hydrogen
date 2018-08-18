@@ -326,6 +326,7 @@ Song: <a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="
 //
 
 function clicklink(e) {
+  loading();
   //console.log(e.getAttribute("href"));
   ipcRenderer.send('element-clicked', e.getAttribute("href"));
   e.preventDefault();
@@ -333,18 +334,26 @@ function clicklink(e) {
 }
 
 function clickchan(e, link) {
+  loading();
   //console.log(link);
   ipcRenderer.send('chan-clicked', link);
   e.preventDefault();
 }
 
 function searchResults(e) {
+  loading();
   var form = document.forms[0];
   var name = form.elements["search_query"].value;
   console.log("search: " + name);
   ipcRenderer.send('search', name);
   return false;
 }
+
+function loading() {
+  var iframe = document.getElementById("loadinggif");
+  iframe.style.zIndex = 99999;
+}
+
 </script>
 
 </body>

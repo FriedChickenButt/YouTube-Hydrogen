@@ -119,15 +119,15 @@ ipcMain.on('msMove', function(e){
 	}
 });
 
-ipcMain.on('openWindow', function(e, path){
+ipcMain.on('openWindow', function(e, path1){
 	if(isSmallOpen == 0) {
-		if(path.substr(path.length - 14) == "startPage.html") {
+		if(path1.substr(path1.length - 14) == "startPage.html") {
 			console.log("openWindow: startPage.html");
 			createAddWindow("https://youtube.com/");	
 		}
 		else {
-			console.log("openWindow: " + path);
-			createAddWindow(path);
+			console.log("openWindow: " + path1);
+			createAddWindow(path1);
 		}
 		isSmallOpen = 1;
 	}
@@ -190,9 +190,9 @@ function downloadPage(link, isChannel) {
 		.catch(console.error);
 }
 
-function createAddWindow(path) {
+function createAddWindow(path1) {
 	var pathnew = "";
-		pathnew = "https://youtube.com/watch?v=" + path.substr(path.lastIndexOf("/") + 1);
+		pathnew = "https://youtube.com/watch?v=" + path1.substr(path1.lastIndexOf("/") + 1);
 	console.log("createAddWindow: " + pathnew);
 	downloadPage(pathnew, 0);
 	addWindow = new BrowserWindow({
@@ -203,6 +203,13 @@ function createAddWindow(path) {
 			frame: false,
 	});
 	addWindow.setAlwaysOnTop(true);
+	console.log("LoadURL: spinner.html");
+	addWindow.loadURL(url.format({
+		pathname: path.join(__dirname, 'spinner.html'),
+		protocol: 'file:',
+		slashes:true
+	  }));
+	
 }
 
 function initAddWindow(isChannel){
