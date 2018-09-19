@@ -22,6 +22,10 @@ let mainWinPos = [0,0];
 let smallSize = [0,0];
 let isSmallOpen = 0;
 
+var history = new Array();
+var historyIsChan = new Array();
+var historyIt = 0;
+
 app.on('ready', function(){
 	mainWindow = new BrowserWindow({width: 400, height: 225, frame: false});
 	mainWindow.setAlwaysOnTop(true);
@@ -130,6 +134,7 @@ ipcMain.on('openWindow', function(e, path1){
 			createAddWindow(path1);
 		}
 		isSmallOpen = 1;
+		mainWindow.focus();
 	}
 	else {
 		console.log("openWindow: close\n");
@@ -139,12 +144,13 @@ ipcMain.on('openWindow', function(e, path1){
 });
 
 ipcMain.on('element-clicked', function(e, path) {
+	mainWindow.focus();
 	console.log("element-clicked: " + path);
 	if(path.substr(26).length == 11) {
 		mainWindow.webContents.send('element-clicked', path + "?autoplay=1");
 		path = "https://www.youtube.com/watch?v=" + path.substr(26);
 		console.log("IPC: element-clicked: " + path);
-		downloadPage(path, 0);
+		downloadPage(path, 0, 0);
 	}
 	else {
 		mainWindow.webContents.send('element-clicked', path);
@@ -153,12 +159,39 @@ ipcMain.on('element-clicked', function(e, path) {
 
 ipcMain.on('chan-clicked', function(e, path) {
 	console.log("chan-clicked: " + path);
-	downloadPage(path, 1);
+	downloadPage(path, 1, 0);
 });
 
 ipcMain.on('search', function(e, name) {
 	console.log("IPC: search: " + name);
-	downloadPage("https://www.youtube.com/results?search_query="+name, 0);
+	downloadPage("https://www.youtube.com/results?search_query="+name, 0, 0);
+});
+
+ipcMain.on('esc-close', function(e) {
+	if(isSmallOpen == 1) {
+		isSmallOpen = 0;
+		addWindow.close();
+		console.log("addwidow closed");
+	}
+});
+
+ipcMain.on('page-navigate', function(e, val) {
+	if(val === 'back') {
+		console.log("loifhigewurwiugrwiubgriewurbgeiugbrwiubgie");
+		if(historyIt === 0) {
+			isSmallOpen = 0;
+			addWindow.close();
+		}
+		else {
+			historyIt--;
+			downloadPage(history[historyIt], historyIsChan[historyIt], 1);
+		}
+	}
+	else if(val === 'forward') {
+		if(history.length > historyIt) {
+			downloadPage(history[++historyIt], historyIsChan[historyIt], 1);
+		}
+	}
 });
 
 function createSmallWindow1_html(v_id_str, thumbnail, vlength_str, simpletext_str, chanurl_str, channel_str, viewtext_str, pubtimetext_str, isPlaylist)
@@ -184,7 +217,24 @@ function createSmallWindow1_html(v_id_str, thumbnail, vlength_str, simpletext_st
 	return data1;
 }
 
-function downloadPage(link, isChannel) {
+function downloadPage(link, isChannel, isBack) {
+	console.log("HL " + history.length + " HI " + historyIt);
+	if(historyIt === history.length) {
+		historyIt++;
+		historyIsChan.push(isChannel);
+		history.push(link);
+	}
+	else {
+		// historyIsChan[++historyIt] = isChannel;
+		// history[historyIt] = link;
+		if(isBack === 0) {
+			historyIsChan.splice(historyIt, historyIsChan.length - historyIt);
+			history.splice(historyIt, history.length - historyIt);
+		}
+	}
+	
+	console.log(history);
+	console.log(historyIsChan);
 	download(mainWindow, link, {directory: __dirname, filename: "download.html"})
 		.then(dl => { console.log("Download: " + dl.getSavePath()); initAddWindow(isChannel);})
 		.catch(console.error);
@@ -194,7 +244,7 @@ function createAddWindow(path1) {
 	var pathnew = "";
 		pathnew = "https://youtube.com/watch?v=" + path1.substr(path1.lastIndexOf("/") + 1);
 	console.log("createAddWindow: " + pathnew);
-	downloadPage(pathnew, 0);
+	downloadPage(pathnew, 0, 0);
 	addWindow = new BrowserWindow({
 		width: 538,
 			height:500,

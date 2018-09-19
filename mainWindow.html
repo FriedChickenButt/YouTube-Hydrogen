@@ -122,6 +122,12 @@
             iframe.src = path;
         });
         
+        document.addEventListener('keydown', event => {
+		    if (event.key === 'Escape' || event.keyCode === 27) {
+		    	ipcRenderer.send('esc-close');
+	    	}
+    	});
+
     </script>
     
 </body>

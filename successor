@@ -354,6 +354,22 @@ function loading() {
   iframe.style.zIndex = 99999;
 }
 
+document.addEventListener('keydown', event => {
+		if (event.key === 'Escape' || event.keyCode === 27) {
+			ipcRenderer.send('esc-close');
+		}
+	});
+
+function goBack() {
+  loading();
+  ipcRenderer.send('page-navigate', 'back');
+}
+
+function goForward() {
+  loading();
+  ipcRenderer.send('page-navigate', 'forward');
+}
+
 </script>
 
 </body>
