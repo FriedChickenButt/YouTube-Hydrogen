@@ -252,7 +252,7 @@ function initAddWindow(isChannel){
 			}
 		}
 		//console.log(beg);
-		let i_i =0;
+		let i_i = 0;
 		while(beg != -1) {
 			ctr += beg;
 			let v_id = 10 + data.toString().substr(ctr).indexOf("videoId");
