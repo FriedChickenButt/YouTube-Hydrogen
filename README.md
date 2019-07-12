@@ -13,5 +13,5 @@ $ git clone https://github.com/FriedChickenButt/YouTube-Hydrogen.git
 ```
 ### Run the application
 ```
-npm start
+$ npm start
 ```
