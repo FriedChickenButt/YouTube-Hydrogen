@@ -2,7 +2,7 @@
 A cross-platform application to view YouTube videos in a floating window.
 
 # Dependencies
-* electron
+* electron (< 3.0.0)
 * electron-dl
 * rimraf
 
