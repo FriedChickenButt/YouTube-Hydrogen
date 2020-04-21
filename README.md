@@ -11,6 +11,10 @@ A cross-platform application to view YouTube videos in a floating window.
 ```
 $ git clone https://github.com/FriedChickenButt/YouTube-Hydrogen.git
 ```
+### Install Dependencies
+```
+$ npm install
+```
 ### Run the application
 ```
 $ npm start
